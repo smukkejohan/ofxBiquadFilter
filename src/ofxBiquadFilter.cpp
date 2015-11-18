@@ -104,10 +104,9 @@ VectorType ofxBiquadFilter_<VectorType>::updateDegree(VectorType inputValue, flo
 }
 
 template<class VectorType>
-VectorType ofxBiquadFilter_<VectorType>::ofxBiquadFilter_::value(){
+VectorType ofxBiquadFilter_<VectorType>::value() {
     return _value;
 }
-
 
 template<class VectorType>
 void ofxBiquadFilter_<VectorType>::setType(ofxBiquadFilterType type){
