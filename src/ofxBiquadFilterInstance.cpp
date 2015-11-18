@@ -120,36 +120,36 @@ void ofxBiquadFilterInstance::calcBiquad(void) {
             break;
         case OFX_BIQUAD_TYPE_LOWSHELF:
             if (peakGain >= 0) {    // boost
-                norm = 1 / (1 + sqrt(2) * K + K * K);
+                norm = 1 / (1 + sqrt((double)2) * K + K * K);
                 a0 = (1 + sqrt(2*V) * K + V * K * K) * norm;
                 a1 = 2 * (V * K * K - 1) * norm;
                 a2 = (1 - sqrt(2*V) * K + V * K * K) * norm;
                 b1 = 2 * (K * K - 1) * norm;
-                b2 = (1 - sqrt(2) * K + K * K) * norm;
+                b2 = (1 - sqrt((double)2) * K + K * K) * norm;
             }
             else {    // cut
                 norm = 1 / (1 + sqrt(2*V) * K + V * K * K);
-                a0 = (1 + sqrt(2) * K + K * K) * norm;
+                a0 = (1 + sqrt((double)2) * K + K * K) * norm;
                 a1 = 2 * (K * K - 1) * norm;
-                a2 = (1 - sqrt(2) * K + K * K) * norm;
+                a2 = (1 - sqrt((double)2) * K + K * K) * norm;
                 b1 = 2 * (V * K * K - 1) * norm;
                 b2 = (1 - sqrt(2*V) * K + V * K * K) * norm;
             }
             break;
         case OFX_BIQUAD_TYPE_HIGHSHELF:
             if (peakGain >= 0) {    // boost
-                norm = 1 / (1 + sqrt(2) * K + K * K);
+                norm = 1 / (1 + sqrt((double)2) * K + K * K);
                 a0 = (V + sqrt(2*V) * K + K * K) * norm;
                 a1 = 2 * (K * K - V) * norm;
                 a2 = (V - sqrt(2*V) * K + K * K) * norm;
                 b1 = 2 * (K * K - 1) * norm;
-                b2 = (1 - sqrt(2) * K + K * K) * norm;
+                b2 = (1 - sqrt((double)2) * K + K * K) * norm;
             }
             else {    // cut
                 norm = 1 / (V + sqrt(2*V) * K + K * K);
-                a0 = (1 + sqrt(2) * K + K * K) * norm;
+                a0 = (1 + sqrt((double)2) * K + K * K) * norm;
                 a1 = 2 * (K * K - 1) * norm;
-                a2 = (1 - sqrt(2) * K + K * K) * norm;
+                a2 = (1 - sqrt((double)2) * K + K * K) * norm;
                 b1 = 2 * (K * K - V) * norm;
                 b2 = (V - sqrt(2*V) * K + K * K) * norm;
             }
