@@ -17,8 +17,10 @@
 //  for your own purposes, free or commercial.
 //
 
+#define _USE_MATH_DEFINES
 #include <math.h>
 #include "ofxBiquadFilterInstance.h"
+
 
 ofxBiquadFilterInstance::ofxBiquadFilterInstance(ofxBiquadFilterType type, double Fc, double Q, double peakGainDB) {
     setBiquad(type, Fc, Q, peakGainDB);
